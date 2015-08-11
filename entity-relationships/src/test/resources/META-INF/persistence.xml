@@ -1,0 +1,59 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="entity-relationships" transaction-type="RESOURCE_LOCAL">
+        <description>
+            Persistence unit for the JPA tutorial of the Hibernate Getting Started Guide
+        </description>
+
+        <!--  This doesnt prevent message from appearing -->
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+        <class>basic_relationship.one2one_si.Apartment</class>
+        <class>basic_relationship.one2one_si.ParkingLot</class>
+        <class>basic_relationship.one2one_bi.HotelCustomer</class>
+        <class>basic_relationship.one2one_bi.Room</class>
+        <class>basic_relationship.many2one.Soldier</class>
+        <class>basic_relationship.many2one.Unit</class>
+        <class>basic_relationship.one2many_si.Student</class>
+        <class>basic_relationship.one2many_si.Presentation</class>
+        <class>basic_relationship.one2many_bi.Subscriber</class>
+        <class>basic_relationship.one2many_bi.Service</class>
+        <class>basic_relationship.many2many_si.Task</class>
+        <class>basic_relationship.many2many_si.Team</class>
+        <class>basic_relationship.many2many_bi.BankCustomer</class>
+        <class>basic_relationship.many2many_bi.BankAccount</class>
+        <class>collection_mappings.element_collection.CompanyEmployee</class>
+        <class>collection_mappings.order_orderby.OrderItem</class>
+        <class>collection_mappings.order_orderby.CustOrder</class>
+
+        <class>collection_mappings.order_persisted.PrintQueue</class>
+        <class>collection_mappings.order_persisted.PrintItem</class>
+
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/jpaworks"/>
+            <property name="javax.persistence.jdbc.user" value="jpaworks"/>
+            <property name="javax.persistence.jdbc.password" value="jpaworks"/>
+
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+            <!--<property name="eclipselink.create-ddl-jdbc-file-name" value="createDDL_ddlGeneration.jdbc"/>-->
+            <!--<property name="eclipselink.drop-ddl-jdbc-file-name" value="dropDDL_ddlGeneration.jdbc"/>-->
+            <property name="eclipselink.ddl-generation.output-mode" value="both"/>
+
+            <property name="eclipselink.jdbc.read-connections.min" value="1"/>
+            <property name="eclipselink.jdbc.write-connections.min" value="1"/>
+            <property name="eclipselink.logging.thread" value="false"/>
+            <property name="eclipselink.logging.timestamp" value="false"/>
+            <property name="eclipselink.logging.session" value="false"/>
+            <property name="eclipselink.logging.exceptions" value="false"/>
+            <property name="eclipselink.logging.connection" value="false"/>
+            <property name="eclipselink.logging.level" value="FINE"/>
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
